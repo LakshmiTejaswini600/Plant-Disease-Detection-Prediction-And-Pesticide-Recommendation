@@ -1,0 +1,271 @@
+{% extends "base.html" %}
+
+{% block title %}KrishiAI - About Project{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <div class="about-header">
+        <h1>About Plant Leaf Diease Project</h1>
+        <p>Final Year Project | Plant Leaf Disease Detection and Pesticides Recomendation.</p>
+    </div>
+    
+    <div class="about-content">
+        <div class="about-section">
+            <h2><i class="fas fa-robot"></i> Our AI Model</h2>
+            <div class="model-card">
+                <div class="model-stats">
+                    <div class="stat">
+                        <span class="stat-value">93.39%</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">18</span>
+                        <span class="stat-label">Classes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">MobileNetV2</span>
+                        <span class="stat-label">Architecture</span>
+                    </div>
+                </div>
+                <p>Our deep learning model is trained on thousands of leaf images to accurately identify 18 different disease classes across 5 major crops: Tomato, Apple, Corn, Potato, and Bell Pepper.</p>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <h2><i class="fas fa-feature"></i> Features</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3>Telugu Voice Assistant</h3>
+                    <p>Automatic voice explanations in Telugu for easy understanding</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Pesticide Calculator</h3>
+                    <p>Calculate exact dosage based on your land area</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Organic Solutions</h3>
+                    <p>Natural alternatives like Neem Oil and Cow urine</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-store"></i>
+                    <h3>Brand Recommendations</h3>
+                    <p>Trusted Indian pesticide brands with prices</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <h2><i class="fas fa-database"></i> Supported Diseases</h2>
+            <div class="diseases-grid">
+                <div class="crop-diseases">
+                    <h3>🍅 Tomato</h3>
+                    <ul>
+                        <li>Early Blight</li>
+                        <li>Late Blight</li>
+                        <li>Leaf Mold</li>
+                        <li>Septoria Leaf Spot</li>
+                        <li>Healthy</li>
+                    </ul>
+                </div>
+                <div class="crop-diseases">
+                    <h3>🍎 Apple</h3>
+                    <ul>
+                        <li>Apple Scab</li>
+                        <li>Black Rot</li>
+                        <li>Cedar Rust</li>
+                        <li>Healthy</li>
+                    </ul>
+                </div>
+                <div class="crop-diseases">
+                    <h3>🌽 Corn</h3>
+                    <ul>
+                        <li>Gray Leaf Spot</li>
+                        <li>Common Rust</li>
+                        <li>Northern Leaf Blight</li>
+                        <li>Healthy</li>
+                    </ul>
+                </div>
+                <div class="crop-diseases">
+                    <h3>🥔 Potato</h3>
+                    <ul>
+                        <li>Early Blight</li>
+                        <li>Late Blight</li>
+                        <li>Healthy</li>
+                    </ul>
+                </div>
+                <div class="crop-diseases">
+                    <h3>🌶️ Bell Pepper</h3>
+                    <ul>
+                        <li>Bacterial Spot</li>
+                        <li>Healthy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <h2><i class="fas fa-code"></i> Technologies Used</h2>
+            <div class="tech-stack">
+                <div class="tech-item">Python</div>
+                <div class="tech-item">Flask</div>
+                <div class="tech-item">TensorFlow</div>
+                <div class="tech-item">MobileNetV2</div>
+                <div class="tech-item">HTML5/CSS3</div>
+                <div class="tech-item">JavaScript</div>
+                <div class="tech-item">gTTS</div>
+                <div class="tech-item">Pillow</div>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <h2><i class="fas fa-users"></i> Team</h2>
+            <p>This project is developed as part of Final Year Project by students passionate about AI and Agriculture.</p>
+            <!-- <p><strong>Guide:</strong> [Your Guide's Name]</p> -->
+            <p><strong>Year Of the Project:</strong> 2026 </p>
+        </div>
+        
+        <div class="about-section">
+            <h2><i class="fas fa-tasks"></i> Future Scope</h2>
+            <ul class="future-list">
+                <li><i class="fas fa-check"></i> Real-time field camera monitoring</li>
+                <li><i class="fas fa-check"></i> Drone-based crop scanning</li>
+                <li><i class="fas fa-check"></i> Soil nutrient detection</li>
+                <li><i class="fas fa-check"></i> AI Chatbot for agriculture questions</li>
+                <li><i class="fas fa-check"></i> Disease outbreak prediction</li>
+                <li><i class="fas fa-check"></i> Multi-language support (Hindi, Telugu, English)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+.about-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.about-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.about-section {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.5s ease;
+}
+
+.about-section h2 {
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.model-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background: var(--light-green);
+    border-radius: 8px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.diseases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.crop-diseases h3 {
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.crop-diseases ul {
+    list-style: none;
+}
+
+.crop-diseases li {
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tech-item {
+    background: var(--light-green);
+    color: var(--primary-green);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.future-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.future-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.5rem;
+    background: #f9f9f9;
+    border-radius: 6px;
+}
+
+.future-list i {
+    color: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+    .model-stats {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}Detection Result{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="result-container">
+
+{% set pred = prediction %}
+{% set disease = pred.disease_data %}
+
+<div class="result-header">
+
+<h1>Disease Detection Result</h1>
+
+<a href="{{ url_for('scan') }}" class="btn btn-outline">
+Scan Another
+</a>
+
+</div>
+
+
+<div class="result-card">
+
+<div class="result-left">
+
+<img src="{{ pred.image_path }}" class="result-image">
+
+
+<div class="severity-meter">
+
+<div class="severity-header">
+
+<span>Severity</span>
+
+<span style="color:{{ pred.severity.color }}">
+{{ pred.severity.icon }} {{ pred.severity.level }}
+</span>
+
+</div>
+
+<div class="meter-bar">
+
+<div class="meter-fill"
+style="width:{{ pred.confidence * 100 }}%;
+background-color:{{ pred.severity.color }}">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="confidence">
+
+<span>Confidence</span>
+
+<span class="confidence-value">
+{{ "%.1f"|format(pred.confidence*100) }}%
+</span>
+
+</div>
+
+</div>
+
+
+<div class="result-right">
+
+<h2 class="disease-name">
+{{ disease.get("disease_name","Unknown Disease") }}
+</h2>
+
+<h3 class="local-name">
+{{ disease.get("local_name","") }}
+</h3>
+
+
+<div class="voice-assistant">
+
+<button class="btn-voice"
+onclick="playVoiceSummary(`{{ disease.get('voice_summary','') }}`)">
+
+🔊 Listen in Telugu
+
+</button>
+
+</div>
+
+
+<div class="info-section">
+
+<h4>Symptoms</h4>
+
+<ul class="info-list">
+
+{% for s in disease.get("symptoms",[]) %}
+<li>{{ s }}</li>
+{% endfor %}
+
+</ul>
+
+</div>
+
+
+<div class="info-section">
+
+<h4>Causes</h4>
+
+<ul class="info-list">
+
+{% for c in disease.get("cause",[]) %}
+<li>{{ c }}</li>
+{% endfor %}
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="brand-suggestions">
+
+<h2 class="section-title">Recommended Brands</h2>
+
+<div class="brands-grid" id="brandsGrid"></div>
+
+</div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/result.js') }}"></script>
+{% endblock %}

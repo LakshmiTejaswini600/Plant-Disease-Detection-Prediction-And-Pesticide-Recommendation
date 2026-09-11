@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{% block title %}Plant Disease{% endblock %}</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+{% block extra_css %}{% endblock %}
+
+<style>
+/* Hide Google translate top bar */
+.goog-te-banner-frame.skiptranslate {
+display: none !important;
+}
+
+body {
+top: 0px !important;
+}
+
+/* hide google logo */
+.goog-logo-link {
+display:none !important;
+}
+
+.goog-te-gadget{
+font-size:0px !important;
+}
+/* Language selector design */
+.language-box{
+display:flex;
+align-items:center;
+gap:8px;
+background:#e8f5e8;
+padding:6px 12px;
+border-radius:25px;
+}
+
+.lang-title{
+font-weight:500;
+color:#2e7d32;
+font-size:14px;
+}
+
+.lang-option{
+border:none;
+background:white;
+padding:4px 12px;
+border-radius:15px;
+cursor:pointer;
+font-size:14px;
+transition:0.3s;
+}
+
+.lang-option:hover{
+background:#2e7d32;
+color:white;
+}
+
+/* Hide Google default UI */
+.goog-te-banner-frame.skiptranslate{
+display:none !important;
+}
+
+body{
+top:0px !important;
+}
+
+#google_translate_element{
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">
+<i class="fas fa-leaf"></i>
+<span>Plant Disease</span>
+</div>
+
+<ul class="nav-menu">
+<li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+<li><a href="{{ url_for('scan') }}" class="nav-link">Scan</a></li>
+<li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+</ul>
+
+<!-- Custom Language Selector -->
+<div class="nav-right">
+
+<div class="language-box">
+
+<span class="lang-title">
+<i class="fas fa-language"></i> Language
+</span>
+
+<button onclick="setLanguage('en')" class="lang-option">
+English
+</button>
+
+<button onclick="setLanguage('te')" class="lang-option">
+తెలుగు
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-section">
+<h3>Plant Disease</h3>
+<p>Crop Based Disease Detection</p>
+</div>
+
+<div class="footer-section">
+<h4>Links</h4>
+<ul>
+<li><a href="{{ url_for('index') }}">Home</a></li>
+<li><a href="{{ url_for('scan') }}">Scan</a></li>
+<li><a href="{{ url_for('about') }}">About</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>Plant Leaf Disease and Pesticides Recommendation</p>
+</div>
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+{% block extra_js %}{% endblock %}
+
+
+<!-- Hidden Google Translator -->
+<div id="google_translate_element"></div>
+
+<script>
+function googleTranslateElementInit() {
+
+new google.translate.TranslateElement(
+{
+pageLanguage: 'en',
+includedLanguages: 'en,te',
+autoDisplay:false
+},
+'google_translate_element'
+
+);
+
+}
+
+/* Custom language switch */
+
+function setLanguage(lang){
+
+let select = document.querySelector(".goog-te-combo");
+
+if(!select){
+alert("Translator loading...");
+return;
+}
+
+select.value = lang;
+select.dispatchEvent(new Event("change"));
+
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

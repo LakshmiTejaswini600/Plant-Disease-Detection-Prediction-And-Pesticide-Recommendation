@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Scan Leaf{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/scan.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="scan-container">
+
+<div class="scan-header">
+<h1>Scan Leaf Disease</h1>
+<p>Upload a clear leaf image for detection</p>
+</div>
+
+<div class="scan-main">
+
+<div class="upload-section">
+
+<div class="upload-area" id="uploadArea">
+
+<i class="fas fa-cloud-upload-alt upload-icon"></i>
+
+<h3>Drag & Drop Leaf Image</h3>
+
+<p>JPG PNG JPEG supported</p>
+
+<input type="file" id="fileInput" accept="image/*" capture="environment" hidden>
+
+<button class="btn btn-primary"
+onclick="document.getElementById('fileInput').click()">
+Browse Image
+</button>
+
+<button class="btn btn-outline" onclick="openCamera()">
+<i class="fas fa-camera"></i> Use Camera
+</button>
+
+</div>
+
+
+<div class="preview-area" id="previewArea" style="display:none">
+
+<img id="previewImage">
+
+<button class="btn btn-outline" onclick="resetUpload()">
+Upload Another
+</button>
+
+</div>
+
+
+<button class="btn btn-primary btn-large analyze-btn"
+id="analyzeBtn"
+style="display:none"
+onclick="analyzeImage()">
+
+Analyze Disease
+
+</button>
+
+
+<div class="loading-animation"
+id="loadingAnimation"
+style="display:none">
+
+<div class="spinner"></div>
+<p>Analyzing Leaf...</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/scan.js') }}"></script>
+{% endblock %}
